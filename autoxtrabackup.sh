@@ -6,8 +6,10 @@
 #       Copyright (c) 2014 Gregory Storme
 #
 # Updated (c) 2017 Ronald Reed and Ryan Riordan
+# Updated (s) 2018 Richard Howes
 #
 # Version: 0.3 beta
+# Version: 0.4 beta - Added parameter for log email Subject
 
 backupDir=/var/backup
 mounttype=nfs
@@ -21,6 +23,7 @@ keepDays=7
 keepWeeks=5
 keepMonths=4
 sendEmail=never
+sendEmailSubject="AutoXtraBackup log for `hostname`"
 emailAddress=
 backupLog=$tmpDir/autoxtrabackup.log
 
@@ -92,6 +95,9 @@ usage () {
 
                 # Send e-mail notifications? Possible values: always, onerror, never
                 sendEmail=never
+		
+		# Send email Subject. Set a custoom subject. Example includes server hostname.
+		sendEmailSubject=\"AutoXtraBackup log for \`hostname\`\"
 
                 # Send to which e-mail address
                 emailAddress=";

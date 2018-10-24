@@ -11,11 +11,9 @@ Supported Linux distributions: Debian, Ubuntu, CentOS, RedHat
 
 Dependencies: percona-xtrabackup
 
-This script has been tested on CentOS 6.9 with MySQL server
+This script has been tested on Ubuntu 16.04 LTS with MariaDB server
 
-Original script can be found here: https://github.com/gstorme/autoxtrabackup
-
-The script that was used as a base for this one can be found here: https://wiki.itadmins.net/mysql_mariadb_galera/galera_autoxtrabackup
+The script that was used as a base for this one can be found here: https://github.com/RJReed67/autoxtrabackup
 
 The configuration file is located at **/etc/default/autoxtrabackup** and should look something like this:
 
@@ -35,6 +33,7 @@ keepDays=270
 keepWeeks=39
 keepMonths=9
 sendEmail=never
+sendEmailSubject="AutoXtraBackup log for `hostname`"
 emailAddress=
 backupLog=$tmpDir/autoxtrabackup.log
 ```
